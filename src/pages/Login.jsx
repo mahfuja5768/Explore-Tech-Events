@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
 import { useContext } from "react";
@@ -8,7 +8,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 const Login = () => {
-  const { signInUser } = useContext(AuthContext);
+  const { signInUser, googleSign } = useContext(AuthContext);
 
   const [loginError, setLoginError] = useState("");
   const [showPass, setShowPass] = useState(true);
@@ -27,6 +27,18 @@ const Login = () => {
     signInUser(email, password)
       .then((res) => {
         console.log(res);
+        toast.success("Successfully Logged in!");
+      })
+      .catch((err) => {
+        setLoginError(err.message);
+        toast.error(err.message);
+      });
+  };
+  const handleGoogle = () => {
+    googleSign()
+      .then((res) => {
+        const user = res.user;
+        console.log(user);
         toast.success("Successfully Logged in!");
       })
       .catch((err) => {
@@ -76,7 +88,7 @@ const Login = () => {
                           </h3>
                           <div className="form-control text-black">
                             <label className="label">
-                              <span className="label-text text-xl">Email</span>
+                              <span className="label-text text-lg">Email</span>
                             </label>
                             <input
                               type="email"
@@ -88,7 +100,7 @@ const Login = () => {
                           </div>
                           <div className="form-control text-black">
                             <label className="label">
-                              <span className="label-text text-xl">
+                              <span className="label-text text-lg">
                                 Password
                               </span>{" "}
                               <span>
@@ -109,11 +121,11 @@ const Login = () => {
                               placeholder="password"
                               className="input input-bordered"
                             />
-                            <label className="label text-xl my-2 text-black">
+                            <label className="label text-lg my-2 text-black">
                               <span>New to this?</span>
                               <Link
                                 to={"/register"}
-                                className=" label-text-alt link link-hover ms-2 text-[#3e8ee9] text-xl"
+                                className=" label-text-alt link link-hover ms-2 text-[#3e8ee9] text-lg"
                               >
                                 Register now
                               </Link>
@@ -125,10 +137,17 @@ const Login = () => {
                             </h3>
                           )}
                           <input
-                            className="btn bg-[#4293e5] text-white w-full hover:text-black"
+                            className="btn normal-case bg-[#4293e5] text-white w-full hover:text-black"
                             type="submit"
                             value="Login"
                           />
+                           <div className="divider text-black py-2">OR</div>
+                          <button onClick={handleGoogle} className="btn normal-case bg-[#4293e5] text-white w-full hover:text-black">
+                            <span>With Google</span>
+                            <span>
+                              <FaGoogle></FaGoogle>
+                            </span>
+                          </button>
                         </form>
                       </div>
                     </div>

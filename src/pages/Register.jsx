@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
-import {  FaEye, FaEyeSlash } from "react-icons/fa";
+import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa";
 import { useContext, useState } from "react";
 import { AuthContext } from "../components/ProviderContext/AuthProvider";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 const Register = () => {
-  const { createUser, updateUser } = useContext(AuthContext);
+  const { createUser, googleSign, updateUser } = useContext(AuthContext);
 
   const [registerError, setRegisterError] = useState("");
   const [showPass, setShowPass] = useState(true);
@@ -18,28 +18,44 @@ const Register = () => {
     const form = new FormData(e.currentTarget);
     const name = form.get("name");
     const email = form.get("email");
-    const photoUrl = form.get("photo-url");
+    const photoUrl = form.get("photoUrl");
     const password = form.get("password");
     console.log(name, email, password);
 
     setRegisterError("");
     formValues.reset();
-
-    if (password.length < 6) {
+    if (name.length === 0 || photoUrl.length === 0 || password.length < 0) {
+      return;
+    } else if (password.length < 6) {
       return setRegisterError(" The password is less than 6 characters");
-    } 
+    }
     //else if (!/[A-Z]/.test(password)) {
     //   return setRegisterError(" The password don't have a capital letter");
     // } else if (!/[!#$%&?]/.test(password)) {
     //   return setRegisterError(" The password don't have a special character");
     // }
-    
 
     createUser(email, password)
       .then((res) => {
         const user = res.user;
         console.log(user);
         updateUser(name, photoUrl)
+          .then(() => console.log("Photo updated"))
+          .catch((err) => setRegisterError(err.message));
+        toast.success("Successfully User Created!");
+      })
+      .catch((err) => {
+        setRegisterError(err.message);
+        toast.error(err.message);
+      });
+  };
+
+  const handleGoogle = () => {
+    googleSign()
+      .then((res) => {
+        const user = res.user;
+        console.log(user);
+        updateUser(user.photoURL, user.displayName)
           .then(() => console.log("Photo updated"))
           .catch((err) => setRegisterError(err.message));
         toast.success("Successfully User Created!");
@@ -77,7 +93,7 @@ const Register = () => {
               </div>
 
               <div
-                className="opacity-100 bg-[#cae2fe] py-2 rounded-xl"
+                className="opacity-100 bg-[#cae2fe] py-1 rounded-xl"
                 data-aos="fade-left"
                 data-aos-duration="3000"
               >
@@ -91,7 +107,7 @@ const Register = () => {
                           </h3>
                           <div className="form-control text-black">
                             <label className="label">
-                              <span className="label-text text-xl ">Name</span>
+                              <span className="label-text text-lg ">Name</span>
                             </label>
                             <input
                               type="text"
@@ -102,7 +118,7 @@ const Register = () => {
                           </div>
                           <div className="form-control text-black">
                             <label className="label">
-                              <span className="label-text text-xl">Email</span>
+                              <span className="label-text text-lg">Email</span>
                             </label>
                             <input
                               type="email"
@@ -113,18 +129,20 @@ const Register = () => {
                           </div>
                           <div className="form-control text-black">
                             <label className="label">
-                              <span className="label-text text-xl">Photo Url</span>
+                              <span className="label-text text-lg">
+                                Photo Url
+                              </span>
                             </label>
                             <input
                               type="text"
-                              name="photo-url"
+                              name="photoUrl"
                               placeholder="photo url"
                               className="input input-bordered "
                             />
                           </div>
                           <div className="form-control text-black">
                             <label className="label">
-                              <span className="label-text text-xl ">
+                              <span className="label-text text-lg ">
                                 Password
                               </span>{" "}
                               <span>
@@ -145,7 +163,7 @@ const Register = () => {
                               placeholder="password"
                               className="input input-bordered"
                             />
-                            <label className="label text-xl my-2 text-black">
+                            <label className="label text-lg my-2 text-black">
                               <span>Already have an account?</span>
                               <Link
                                 to={"/login"}
@@ -161,10 +179,20 @@ const Register = () => {
                             </h3>
                           )}
                           <input
-                            className="btn bg-[#4293e5] text-white w-full hover:text-black"
+                            className="btn normal-case bg-[#4293e5] text-white w-full hover:text-black"
                             type="submit"
                             value="Register"
                           />
+                          <div className="divider text-black py-2">OR</div>
+                          <button
+                            onClick={handleGoogle}
+                            className="btn bg-[#4293e5] normal-case text-white w-full hover:text-black"
+                          >
+                            <span>With Google</span>
+                            <span>
+                              <FaGoogle></FaGoogle>
+                            </span>
+                          </button>
                         </form>
                       </div>
                     </div>

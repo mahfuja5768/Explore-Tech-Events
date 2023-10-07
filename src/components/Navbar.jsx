@@ -1,6 +1,10 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "./ProviderContext/AuthProvider";
 
 const Navbar = () => {
+  const { user } = useContext(AuthContext);
+
   const navList = (
     <>
       <li className="lg:mx-2 mb-4 lg:mb-0">
@@ -74,9 +78,7 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navList}</ul>
       </div>
-      <div
-        className="navbar-end flex lg:hidden me-4"
-      >
+      <div className="navbar-end flex lg:hidden me-4">
         <Link
           to="/"
           className="btn btn-ghost normal-case  text-xl mt-3 block lg:hidden"
@@ -84,14 +86,27 @@ const Navbar = () => {
           Explore-Tech-Events
         </Link>
       </div>
-      <div
-        className="navbar-end hidden md:flex me-5"
-      >
-        <Link to="/login" className="btn md:btn-sm">
-          Login
-        </Link>
+      <div className="navbar-end hidden md:flex me-5">
+        {user && (
+          <>
+            <img
+              src={user.photoURL}
+              className="rounded-full w-12"
+              alt="user photo"
+            />
+            <h3 className="mx-5 text-[#ffed48]">{user.displayName}</h3>
+          </>
+        )}
+        {user ? (
+          <Link to="/login" className="btn md:btn-sm normal-case">
+            Logout
+          </Link>
+        ) : (
+          <Link to="/login" className="btn md:btn-sm normal-case">
+            Login
+          </Link>
+        )}
       </div>
-     
     </div>
   );
 };

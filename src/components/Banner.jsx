@@ -36,7 +36,7 @@ const Banner = () => {
                   empower you to connect, learn, and shape the future of
                   technology.
                 </p>
-                <button className="btn mt-2 mb-5">
+                <button className="btn mt-2 mb-5 normal-case">
                   <span>Upcoming Events</span>
                   <span className="mt-2 w-6 h-6 animate-moveRight">
                     <FaArrowCircleRight></FaArrowCircleRight>
