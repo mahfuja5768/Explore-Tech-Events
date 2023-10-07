@@ -28,7 +28,9 @@ const Navbar = () => {
         </NavLink>
       </li>
       <li className="md:hidden w-1/2">
-        <Link  to="/login" className="btn btn-sm rounded-sm mb-5">Login</Link>
+        <Link to="/login" className="btn btn-sm rounded-sm mb-5">
+          Login
+        </Link>
       </li>
     </>
   );
@@ -60,15 +62,22 @@ const Navbar = () => {
             {navList}
           </ul>
         </div>
-        <Link to="/" className="btn btn-ghost normal-case lg:text-3xl text-2xl">Explore-Tech-Events</Link>
+        <div data-aos="fade-right" data-aos-duration="3000">
+          <Link
+            to="/"
+            className="btn btn-ghost normal-case lg:text-3xl text-2xl"
+          >
+            Explore-Tech-Events
+          </Link>
+        </div>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
-         {navList}
-        </ul>
+        <ul className="menu menu-horizontal px-1">{navList}</ul>
       </div>
-      <div className="navbar-end hidden md:flex">
-      <Link to="/login" className="btn md:btn-sm">Login</Link>
+      <div className="navbar-end hidden md:flex" data-aos="fade-left" data-aos-duration="3000">
+        <Link to="/login" className="btn md:btn-sm">
+          Login
+        </Link>
       </div>
     </div>
   );

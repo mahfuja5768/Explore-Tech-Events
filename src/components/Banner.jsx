@@ -1,7 +1,7 @@
 import Navbar from "./Navbar";
 import { FaArrowCircleRight } from "react-icons/fa";
-
 const Banner = () => {
+
   return (
     <div>
       <div
@@ -20,8 +20,11 @@ const Banner = () => {
           </div>
           <div className="hero-content min-h-[30vh] md:min-h-[40vh] lg:min-h-[70vh]  text-center lg:text-start text-neutral-content mx-auto  my-2 lg:my-8">
             <div className="grid grid-cols-1 lg:grid-cols-4">
-              <div className=" lg:col-span-3">
-                <h1 className="mb-4 text-3xl md:text-5xl leading-9 font-bold w-full  md:w-10/12  lg:w-full mx-auto">
+              <div className=" lg:col-span-3" data-aos="fade-right"
+                  data-aos-duration="3000">
+                <h1
+                  className="mb-4 text-3xl md:text-5xl leading-9 font-bold w-full  md:w-10/12  lg:w-full mx-auto" 
+                >
                   Discover the Latest Trends, Insights, and Innovations.
                 </h1>
                 <h2 className="text-xl md:text-2xl font-semibold">
@@ -33,15 +36,17 @@ const Banner = () => {
                   empower you to connect, learn, and shape the future of
                   technology.
                 </p>
-                <button className="btn mt-2 mb-5">
-                 <span> Explore Upcoming Events</span>
+                <button className="btn mt-2 mb-5" data-aos="fade-left"
+                  data-aos-duration="3000">
+                  <span> Explore Upcoming Events</span>
                   <span className="mt-2 w-6 h-6 animate-moveRight">
                     <FaArrowCircleRight></FaArrowCircleRight>
                   </span>
                 </button>
               </div>
             </div>
-            <div className="w-2/5 hidden lg:flex">
+            <div className="w-2/5 hidden lg:flex" data-aos="fade-left"
+                  data-aos-duration="3000">
               <img
                 className="flex -rotate-180 "
                 src={`https://i.ibb.co/9ckZs9b/banner-side.png`}
