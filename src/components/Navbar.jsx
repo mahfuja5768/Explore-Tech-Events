@@ -65,7 +65,7 @@ const Navbar = () => {
         <div data-aos="fade-right" data-aos-duration="3000">
           <Link
             to="/"
-            className="btn btn-ghost normal-case lg:text-3xl text-2xl"
+            className="btn btn-ghost normal-case lg:text-3xl hidden lg:flex"
           >
             Explore-Tech-Events
           </Link>
@@ -74,11 +74,24 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navList}</ul>
       </div>
-      <div className="navbar-end hidden md:flex" data-aos="fade-left" data-aos-duration="3000">
+      <div
+        className="navbar-end flex lg:hidden me-4"
+      >
+        <Link
+          to="/"
+          className="btn btn-ghost normal-case  text-xl mt-3 block lg:hidden"
+        >
+          Explore-Tech-Events
+        </Link>
+      </div>
+      <div
+        className="navbar-end hidden md:flex"
+      >
         <Link to="/login" className="btn md:btn-sm">
           Login
         </Link>
       </div>
+     
     </div>
   );
 };

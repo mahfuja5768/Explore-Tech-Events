@@ -14,11 +14,11 @@ const Banner = () => {
         }}
       >
         <div className="hero-overlay p-0"></div>
-        <div className="flex flex-col w-full max-w-[1280px] mx-auto px-2">
+        <div className="flex flex-col w-full max-w-[1280px] mx-auto ">
           <div className="my-8">
             <Navbar></Navbar>
           </div>
-          <div className="hero-content min-h-[30vh] md:min-h-[40vh] lg:min-h-[70vh]  text-center lg:text-start text-neutral-content mx-auto  my-2 lg:my-8">
+          <div className="hero-content px-2 min-h-[30vh] md:min-h-[40vh] lg:min-h-[70vh]  text-center lg:text-start text-neutral-content mx-auto  my-2 lg:my-8">
             <div className="grid grid-cols-1 lg:grid-cols-4">
               <div className=" lg:col-span-3" data-aos="fade-right"
                   data-aos-duration="3000">
@@ -36,8 +36,7 @@ const Banner = () => {
                   empower you to connect, learn, and shape the future of
                   technology.
                 </p>
-                <button className="btn mt-2 mb-5" data-aos="fade-left"
-                  data-aos-duration="3000">
+                <button className="btn mt-2 mb-5">
                   <span> Explore Upcoming Events</span>
                   <span className="mt-2 w-6 h-6 animate-moveRight">
                     <FaArrowCircleRight></FaArrowCircleRight>
@@ -45,14 +44,22 @@ const Banner = () => {
                 </button>
               </div>
             </div>
-            <div className="w-2/5 hidden lg:flex" data-aos="fade-left"
+            {/* <div className="w-2/5 hidden lg:flex" data-aos="fade-left"
                   data-aos-duration="3000">
               <img
                 className="flex -rotate-180 "
                 src={`https://i.ibb.co/9ckZs9b/banner-side.png`}
                 alt=""
               />
+            </div> */}
+            <div className="w-1/2 hidden lg:flex" data-aos="fade-left"
+                  data-aos-duration="3000">
+              <img
+                src={`https://i.ibb.co/DrvShMP/banner-light2-removebg-preview.png`}
+                alt=""
+              />
             </div>
+
           </div>
         </div>
       </div>

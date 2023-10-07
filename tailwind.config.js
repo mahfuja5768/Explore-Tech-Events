@@ -12,12 +12,12 @@ export default {
             transform: 'translateX(0)',
           },
           '100%': {
-            transform: 'translateX(10px)', // Adjust the value to control the distance of the animation
+            transform: 'translateX(10px)', 
           },
         },
       },
       animation: {
-        moveRight: 'moveRight 3s infinite', // Use the keyframes animation here
+        moveRight: 'moveRight 3s infinite',
       },
     },
   },
