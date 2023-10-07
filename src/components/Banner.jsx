@@ -37,7 +37,7 @@ const Banner = () => {
                   technology.
                 </p>
                 <button className="btn mt-2 mb-5">
-                  <span> Explore Upcoming Events</span>
+                  <span>Upcoming Events</span>
                   <span className="mt-2 w-6 h-6 animate-moveRight">
                     <FaArrowCircleRight></FaArrowCircleRight>
                   </span>

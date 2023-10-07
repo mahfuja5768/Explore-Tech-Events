@@ -85,7 +85,7 @@ const Navbar = () => {
         </Link>
       </div>
       <div
-        className="navbar-end hidden md:flex"
+        className="navbar-end hidden md:flex me-5"
       >
         <Link to="/login" className="btn md:btn-sm">
           Login

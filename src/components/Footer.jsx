@@ -10,7 +10,7 @@ const Footer = () => {
   return (
     <footer>
       <div
-        className="hero text-white mt-12"
+        className="hero text-white "
         style={{ backgroundImage: "url(https://i.ibb.co/gvFqS5Y/footer3.jpg)" }}
       >
         <div className="hero-overlay bg-opacity-80 bg-gray-900"></div>
@@ -27,7 +27,7 @@ const Footer = () => {
               Home
             </Link>
             <Link to="/speakers" className="link link-hover ps-1 font-medium">
-              {" "}
+          
               Speakers
             </Link>
           </nav>
