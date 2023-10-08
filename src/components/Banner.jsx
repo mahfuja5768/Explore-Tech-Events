@@ -5,7 +5,7 @@ const Banner = () => {
   return (
     <div>
       <div
-        className="hero"
+        className="hero text-white"
         style={{
           backgroundImage: "url(https://i.ibb.co/wzMDxsC/banner1.jpg)",
           backgroundPosition: "center",
@@ -36,7 +36,7 @@ const Banner = () => {
                   empower you to connect, learn, and shape the future of
                   technology.
                 </p>
-                <button className="btn mt-1 mb-5 normal-case">
+                <button className="btn mt-1 mb-5 normal-case bg-gray-200 btn-outline">
                   <span>Upcoming Events</span>
                   <span className="mt-2 w-6 h-6 animate-moveRight">
                     <FaArrowCircleRight></FaArrowCircleRight>

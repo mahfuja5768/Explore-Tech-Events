@@ -1,12 +1,18 @@
 import Banner from "../components/Banner";
 import ConferenceInfo from "../components/ConferenceInfo";
-import Footer from "../components/Footer";
+import FeaturedEvents from "../components/UpcomingEvents";
+import Footer from "../components/Footer"
+import EventSchedule from "../components/EventSchedule";
+import Speakers from "../components/Speakers";
 
 const Home = () => {
     return (
         <div>
             <Banner></Banner>
             <ConferenceInfo></ConferenceInfo>
+            <FeaturedEvents></FeaturedEvents>
+            <Speakers></Speakers>
+            <EventSchedule></EventSchedule>
             <Footer></Footer>
         </div>
     );

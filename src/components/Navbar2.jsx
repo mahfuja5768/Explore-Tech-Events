@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "./ProviderContext/AuthProvider";
 import toast from "react-hot-toast";
 
-const Navbar = () => {
+const Navbar2 = () => {
   const { user, logOut } = useContext(AuthContext);
 
   const handleLogout = () => {
@@ -18,8 +18,8 @@ const Navbar = () => {
         <NavLink
           className={({ isActive }) =>
             isActive
-              ? "text-white hover:text-white underline decoration-[#ffed48] decoration-2 underline-offset-8 font-bold hover:bg-transparent"
-              : "text-white hover:text-[#ffed48] hover:bg-transparent"
+              ? "text-black hover:text-black underline decoration-black decoration-2 underline-offset-8 font-bold hover:bg-transparent"
+              : "text-black hover:text-black hover:bg-transparent"
           }
           to={"/"}
         >
@@ -30,8 +30,8 @@ const Navbar = () => {
         <NavLink
           className={({ isActive }) =>
             isActive
-              ? "text-white hover:text-white underline decoration-[#ffed48] decoration-2 underline-offset-8 font-bold hover:bg-transparent"
-              : "text-white hover:text-[#ffed48]  hover:bg-transparent"
+              ? "text-black hover:text-black underline decoration-black decoration-2 underline-offset-8 font-bold hover:bg-transparent"
+              : "text-black hover:text-black  hover:bg-transparent"
           }
           to={"/about"}
         >
@@ -42,8 +42,8 @@ const Navbar = () => {
         <NavLink
           className={({ isActive }) =>
             isActive
-              ? "text-white hover:text-white underline decoration-[#ffed48] decoration-2 underline-offset-8 font-bold hover:bg-transparent"
-              : "text-white hover:text-[#ffed48]  hover:bg-transparent"
+              ? "text-black hover:text-black underline decoration-black decoration-2 underline-offset-8 font-bold hover:bg-transparent"
+              : "text-black hover:text-black  hover:bg-transparent"
           }
           to={"/moreEvents"}
         >
@@ -55,8 +55,8 @@ const Navbar = () => {
           <NavLink
             className={({ isActive }) =>
               isActive
-                ? "text-white hover:text-white underline decoration-[#ffed48] decoration-2 underline-offset-8 font-bold hover:bg-transparent"
-                : "text-white hover:text-[#ffed48]  hover:bg-transparent"
+                ? "text-black hover:text-black underline decoration-black decoration-2 underline-offset-8 font-bold hover:bg-transparent"
+                : "text-black hover:text-black  hover:bg-transparent"
             }
             to="/selectedEvent"
           >
@@ -73,7 +73,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar">
+    <div className="navbar bg-base-100 shadow-xl py-6">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -102,7 +102,7 @@ const Navbar = () => {
         <div data-aos="fade-right" data-aos-duration="3000">
           <Link
             to="/"
-            className="btn btn-ghost normal-case lg:text-3xl hidden lg:flex text-white"
+            className="btn btn-ghost normal-case lg:text-3xl hidden lg:flex text-black"
           >
             Explore-Tech-Events
           </Link>
@@ -127,7 +127,7 @@ const Navbar = () => {
               className="rounded-full w-[45px] h-[45px]"
               alt="user photo"
             />
-            <h3 className="mx-5 text-[#ffed48] text-xl">{user.displayName}</h3>
+            <h3 className="mx-5 text-black text-xl">{user.displayName}</h3>
           </>
         )}
         {user && 
@@ -147,4 +147,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Navbar2;

@@ -46,7 +46,6 @@ const Register = () => {
       })
       .catch((err) => {
         setRegisterError(err.message);
-        toast.error(err.message);
       });
   };
 
@@ -62,7 +61,6 @@ const Register = () => {
       })
       .catch((err) => {
         setRegisterError(err.message);
-        toast.error(err.message);
       });
   };
 
@@ -77,14 +75,10 @@ const Register = () => {
           backgroundSize: "cover",
         }}
       >
-        <div className="hero-overlay p-0 opacity-10 bg-black"></div>
-
-        <div className="flex flex-col w-full max-w-[1280px] mx-auto ">
-          <div className="my-8">
-            <Navbar></Navbar>
-          </div>
+        <div className="flex flex-col w-full max-w-[1280px] mx-auto py-8">
+          <Navbar></Navbar>
           <div className="hero-content px-2 text-center lg:text-start text-neutral-content mx-auto  my-2 lg:my-8">
-            <div className="flex flex-col md:flex-row items-center gap-6 justify-between my-12">
+            <div className="flex flex-col md:flex-row items-center gap-6 justify-between my-2">
               <div data-aos="fade-right" data-aos-duration="3000">
                 <img
                   src={`https://i.ibb.co/7V7mjG7/reigister-illus.png`}
@@ -101,7 +95,7 @@ const Register = () => {
                   <div className="hero-content">
                     <div className="card  w-full">
                       <div className="card-body">
-                        <form onSubmit={handleSubmit} className=" space-y-1">
+                        <form onSubmit={handleSubmit}>
                           <h3 className="text-center text-3xl text-black font-bold my-1">
                             Register now
                           </h3>
@@ -140,7 +134,7 @@ const Register = () => {
                               className="input input-bordered "
                             />
                           </div>
-                          <div className="form-control text-black">
+                          <div className="form-control text-black text-lg ">
                             <label className="label">
                               <span className="label-text text-lg ">
                                 Password
@@ -163,7 +157,7 @@ const Register = () => {
                               placeholder="password"
                               className="input input-bordered"
                             />
-                            <label className="label text-lg my-2 text-black">
+                            <label className="label text-lg my-1 text-black">
                               <span>Already have an account?</span>
                               <Link
                                 to={"/login"}
@@ -174,7 +168,7 @@ const Register = () => {
                             </label>
                           </div>
                           {registerError && (
-                            <h3 className="text-red-600 mb-12 text-lg pb-5">
+                            <h3 className="text-red-600  text-lg pb-2">
                               {registerError}
                             </h3>
                           )}
@@ -183,7 +177,7 @@ const Register = () => {
                             type="submit"
                             value="Register"
                           />
-                          <div className="divider text-black py-2">OR</div>
+                          <div className="divider text-black py-1">OR</div>
                           <button
                             onClick={handleGoogle}
                             className="btn bg-[#4293e5] normal-case text-white w-full hover:text-black"

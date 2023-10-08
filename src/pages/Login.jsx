@@ -1,11 +1,11 @@
 import { useRef, useState } from "react";
 import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
 import { useContext } from "react";
 import { AuthContext } from "../components/ProviderContext/AuthProvider";
-import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
 
 const Login = () => {
   const { signInUser, googleSign } = useContext(AuthContext);
@@ -13,6 +13,9 @@ const Login = () => {
   const [loginError, setLoginError] = useState("");
   const [showPass, setShowPass] = useState(true);
   const emailRef = useRef(null);
+
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -25,30 +28,32 @@ const Login = () => {
     formValues.reset();
 
     signInUser(email, password)
-      .then((res) => {
-        console.log(res);
-        toast.success("Successfully Logged in!");
+      .then(() => {
+        if (location.state) {
+          navigate(location.state);
+          toast.success("Successfully Logged in!");
+        } else {
+          navigate("/");
+        }
       })
       .catch((err) => {
         setLoginError(err.message);
-        toast.error(err.message);
       });
   };
   const handleGoogle = () => {
     googleSign()
-      .then((res) => {
-        const user = res.user;
-        console.log(user);
+      .then(() => {
         toast.success("Successfully Logged in!");
+        navigate(location.state ? location.state : "/");
       })
       .catch((err) => {
         setLoginError(err.message);
-        toast.error(err.message);
       });
   };
 
   return (
     <>
+      <Toaster></Toaster>
       <div
         className="hero"
         style={{
@@ -58,12 +63,9 @@ const Login = () => {
           backgroundSize: "cover",
         }}
       >
-        <div className="hero-overlay p-0 opacity-10 bg-black"></div>
+        <div className="flex flex-col w-full max-w-[1280px] mx-auto py-8">
+          <Navbar></Navbar>
 
-        <div className="flex flex-col w-full max-w-[1280px] mx-auto ">
-          <div className="my-8">
-            <Navbar></Navbar>
-          </div>
           <div className="hero-content px-2 text-center lg:text-start text-neutral-content mx-auto  my-2 lg:my-8">
             <div className="flex md:flex-row-reverse flex-col gap-6  items-center justify-between my-12">
               <div data-aos="fade-left" data-aos-duration="3000">
@@ -98,7 +100,7 @@ const Login = () => {
                               className="input input-bordered"
                             />
                           </div>
-                          <div className="form-control text-black">
+                          <div className="form-control text-black text-lg ">
                             <label className="label">
                               <span className="label-text text-lg">
                                 Password
@@ -141,8 +143,11 @@ const Login = () => {
                             type="submit"
                             value="Login"
                           />
-                           <div className="divider text-black py-2">OR</div>
-                          <button onClick={handleGoogle} className="btn normal-case bg-[#4293e5] text-white w-full hover:text-black">
+                          <div className="divider text-black py-2">OR</div>
+                          <button
+                            onClick={handleGoogle}
+                            className="btn normal-case bg-[#4293e5] text-white w-full hover:text-black"
+                          >
                             <span>With Google</span>
                             <span>
                               <FaGoogle></FaGoogle>
@@ -159,7 +164,6 @@ const Login = () => {
         </div>
       </div>
       <Footer></Footer>
-      <Toaster></Toaster>
     </>
   );
 };
