@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
 import { FaArrowCircleRight } from "react-icons/fa";
 const Banner = () => {
@@ -36,12 +37,12 @@ const Banner = () => {
                   empower you to connect, learn, and shape the future of
                   technology.
                 </p>
-                <button className="btn mt-1 mb-5 normal-case bg-gray-200 btn-outline">
-                  <span>Upcoming Events</span>
+               <Link to='/moreEvents'> <button  className="btn mt-1 mb-5 normal-case bg-gray-200 btn-outline">
+                  <span >Upcoming Events</span>
                   <span className="mt-2 w-6 h-6 animate-moveRight">
                     <FaArrowCircleRight></FaArrowCircleRight>
                   </span>
-                </button>
+                </button></Link>
               </div>
             </div>
             {/* <div className="w-2/5 hidden lg:flex" data-aos="fade-left"
