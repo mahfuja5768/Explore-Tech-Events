@@ -1,4 +1,4 @@
-import toast from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 import { useLoaderData, useParams } from "react-router-dom";
 import { FaTicketAlt, FaUserAlt } from "react-icons/fa";
 import Navbar2 from "./Navbar2";
@@ -83,6 +83,7 @@ const EventDetails = () => {
           </div>
         </div>
       </div>
+      <Toaster></Toaster>
     </>
   );
 };

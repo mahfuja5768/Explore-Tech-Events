@@ -3,8 +3,8 @@ import toast, { Toaster } from "react-hot-toast";
 import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa";
 import { useContext, useState } from "react";
 import { AuthContext } from "../components/ProviderContext/AuthProvider";
-import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import Navbar2 from "../components/Navbar2";
 
 const Register = () => {
   const { createUser, googleSign, updateUser } = useContext(AuthContext);
@@ -66,129 +66,117 @@ const Register = () => {
 
   return (
     <>
-      <div
-        className="hero"
-        style={{
-          backgroundImage: "url(https://i.ibb.co/6g1jRKm/login-bg.jpg)",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-        }}
-      >
-        <div className="flex flex-col w-full max-w-[1280px] mx-auto py-8">
-          <Navbar></Navbar>
-          <div className="hero-content px-2 text-center lg:text-start text-neutral-content mx-auto  my-2 lg:my-8">
-            <div className="flex flex-col md:flex-row items-center gap-6 justify-between my-2">
-              <div data-aos="fade-right" data-aos-duration="3000">
-                <img
-                  src={`https://i.ibb.co/7V7mjG7/reigister-illus.png`}
-                  alt=""
-                />
-              </div>
+      <div className="flex flex-col w-full max-w-[1280px] mx-auto">
+        <Navbar2></Navbar2>
+        <div className="hero-content px-4 text-center lg:text-start text-neutral-content mx-auto  my-2 lg:my-8">
+          <div className="flex flex-col md:flex-row items-center gap-6 justify-between my-2">
+            <div data-aos="fade-right" data-aos-duration="3000">
+              <img 
+                src={`https://i.ibb.co/7V7mjG7/reigister-illus.png`}
+                alt=""
+              />
+            </div>
 
-              <div
-                className="opacity-100 bg-[#cae2fe] py-1 rounded-xl"
-                data-aos="fade-left"
-                data-aos-duration="3000"
-              >
-                <div className="hero ">
-                  <div className="hero-content">
-                    <div className="card  w-full">
-                      <div className="card-body">
-                        <form onSubmit={handleSubmit}>
-                          <h3 className="text-center text-3xl text-black font-bold my-1">
-                            Register now
-                          </h3>
-                          <div className="form-control text-black">
-                            <label className="label">
-                              <span className="label-text text-lg ">Name</span>
-                            </label>
-                            <input
-                              type="text"
-                              name="name"
-                              placeholder="name"
-                              className="input input-bordered"
-                            />
-                          </div>
-                          <div className="form-control text-black">
-                            <label className="label">
-                              <span className="label-text text-lg">Email</span>
-                            </label>
-                            <input
-                              type="email"
-                              name="email"
-                              placeholder="email"
-                              className="input input-bordered "
-                            />
-                          </div>
-                          <div className="form-control text-black">
-                            <label className="label">
-                              <span className="label-text text-lg">
-                                Photo Url
-                              </span>
-                            </label>
-                            <input
-                              type="text"
-                              name="photoUrl"
-                              placeholder="photo url"
-                              className="input input-bordered "
-                            />
-                          </div>
-                          <div className="form-control text-black text-lg ">
-                            <label className="label">
-                              <span className="label-text text-lg ">
-                                Password
-                              </span>{" "}
-                              <span>
-                                {showPass ? (
-                                  <FaEyeSlash
-                                    onClick={() => setShowPass(!showPass)}
-                                  />
-                                ) : (
-                                  <FaEye
-                                    onClick={() => setShowPass(!showPass)}
-                                  />
-                                )}
-                              </span>
-                            </label>
-                            <input
-                              type={showPass ? "password" : "text"}
-                              name="password"
-                              placeholder="password"
-                              className="input input-bordered"
-                            />
-                            <label className="label text-lg my-1 text-black">
-                              <span>Already have an account?</span>
-                              <Link
-                                to={"/login"}
-                                className=" label-text-alt link link-hover ms-2 text-[#3e8ee9] text-xl"
-                              >
-                                Login now
-                              </Link>
-                            </label>
-                          </div>
-                          {registerError && (
-                            <h3 className="text-red-600  text-lg pb-2">
-                              {registerError}
-                            </h3>
-                          )}
+            <div
+              className="opacity-100 bg-[#cae2fe] py-1 rounded-xl"
+              data-aos="fade-left"
+              data-aos-duration="3000"
+            >
+              <div className="hero ">
+                <div className="hero-content">
+                  <div className="card  w-full">
+                    <div className="card-body">
+                      <form onSubmit={handleSubmit}>
+                        <h3 className="text-center text-3xl text-black font-bold my-1">
+                          Register now
+                        </h3>
+                        <div className="form-control text-black">
+                          <label className="label">
+                            <span className="label-text text-lg ">Name</span>
+                          </label>
                           <input
-                            className="btn normal-case bg-[#4293e5] text-white w-full hover:text-black"
-                            type="submit"
-                            value="Register"
+                            type="text"
+                            name="name"
+                            placeholder="name"
+                            className="input input-bordered"
                           />
-                          <div className="divider text-black py-1">OR</div>
-                          <button
-                            onClick={handleGoogle}
-                            className="btn bg-[#4293e5] normal-case text-white w-full hover:text-black"
-                          >
-                            <span>With Google</span>
-                            <span>
-                              <FaGoogle></FaGoogle>
+                        </div>
+                        <div className="form-control text-black">
+                          <label className="label">
+                            <span className="label-text text-lg">Email</span>
+                          </label>
+                          <input
+                            type="email"
+                            name="email"
+                            placeholder="email"
+                            className="input input-bordered "
+                          />
+                        </div>
+                        <div className="form-control text-black">
+                          <label className="label">
+                            <span className="label-text text-lg">
+                              Photo Url
                             </span>
-                          </button>
-                        </form>
-                      </div>
+                          </label>
+                          <input
+                            type="text"
+                            name="photoUrl"
+                            placeholder="photo url"
+                            className="input input-bordered "
+                          />
+                        </div>
+                        <div className="form-control text-black text-lg ">
+                          <label className="label">
+                            <span className="label-text text-lg ">
+                              Password
+                            </span>{" "}
+                            <span>
+                              {showPass ? (
+                                <FaEyeSlash
+                                  onClick={() => setShowPass(!showPass)}
+                                />
+                              ) : (
+                                <FaEye onClick={() => setShowPass(!showPass)} />
+                              )}
+                            </span>
+                          </label>
+                          <input
+                            type={showPass ? "password" : "text"}
+                            name="password"
+                            placeholder="password"
+                            className="input input-bordered"
+                          />
+                          <label className="label text-lg my-1 text-black">
+                            <span>Already have an account?</span>
+                            <Link
+                              to={"/login"}
+                              className=" label-text-alt link link-hover ms-2 text-[#3e8ee9] text-xl"
+                            >
+                              Login now
+                            </Link>
+                          </label>
+                        </div>
+                        {registerError && (
+                          <h3 className="text-red-600  text-lg pb-2">
+                            {registerError}
+                          </h3>
+                        )}
+                        <input
+                          className="btn normal-case bg-[#4293e5] text-white w-full hover:text-black"
+                          type="submit"
+                          value="Register"
+                        />
+                        <div className="divider text-black py-1">OR</div>
+                        <button
+                          onClick={handleGoogle}
+                          className="btn bg-[#4293e5] normal-case text-white w-full hover:text-black"
+                        >
+                          <span>With Google</span>
+                          <span>
+                            <FaGoogle></FaGoogle>
+                          </span>
+                        </button>
+                      </form>
                     </div>
                   </div>
                 </div>
