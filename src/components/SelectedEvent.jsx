@@ -17,7 +17,7 @@ const SelectedEvent = ({ event }) => {
         </figure>
 
         <div className="card-body">
-          <h2 className="text-2xl  font-bold">{event_name}</h2>
+          <h2 className="text-xl md:text-2xl  font-bold">{event_name}</h2>
           <div className="py-1">
             <p className=" flex items-center">
               <span className="text-sm me-3">

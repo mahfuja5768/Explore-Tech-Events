@@ -11,8 +11,8 @@ const Home = () => {
             <Banner></Banner>
             <ConferenceInfo></ConferenceInfo>
             <FeaturedEvents></FeaturedEvents>
-            <Speakers></Speakers>
             <EventSchedule></EventSchedule>
+            <Speakers></Speakers>
             <Footer></Footer>
         </div>
     );

@@ -21,7 +21,7 @@ const UpcomingEvents = () => {
       <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center">
         Tech Unleashed: Upcoming Highlights
       </h2>
-      <p className="text-center w-3/4 mx-auto my-5">
+      <p className="text-center w-full md:w-3/4 mx-auto my-5">
         Stay ahead in the ever-evolving tech landscape. Explore our upcoming
         tech conferences and expos, where innovation meets opportunity. From AI
         to blockchain, cybersecurity to IoT, these events are your gateway to

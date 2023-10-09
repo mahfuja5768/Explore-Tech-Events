@@ -1,10 +1,5 @@
 import { Link } from "react-router-dom";
-import {
-  FaFacebookF,
-  FaInstagram,
-  FaLinkedin,
-  FaTwitter,
-} from "react-icons/fa";
+import { FaFacebookF, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -23,13 +18,26 @@ const Footer = () => {
             <header className="font-bold text-2xl text-white mb-2">
               Quick Menu
             </header>
-            <Link to="/" className="link link-hover ps-1 font-medium">
+            <Link to="/" className="link link-hover ps-1 pb-3 font-medium">
               Home
             </Link>
-            <Link to="/speakers" className="link link-hover ps-1 font-medium">
-          
-              Speakers
+            <Link to="/about" className="link link-hover ps-1 pb-3 font-medium">
+              About
             </Link>
+            <Link
+              to="/moreEvents"
+              className="link link-hover ps-1 pb-3 font-medium"
+            >
+              More Events
+            </Link>
+            {
+              <Link
+                className="link link-hover ps-1 font-medium"
+                to="/selectedEvent"
+              >
+                Selected Event
+              </Link>
+            }
           </nav>
 
           <nav>
@@ -74,14 +82,14 @@ const Footer = () => {
               You can trust us. we only send promo offers, not a single spam.
             </p>
 
-            <fieldset className="form-control w-80 my-4">
+            <fieldset className="form-control  my-4  md:w-80">
               <div className="relative">
                 <input
                   type="text"
                   placeholder="username@site.com"
-                  className="input input-bordered w-full pr-16"
+                  className="input input-bordered w-1/2 md:w-full pr-16"
                 />
-                <button className="btn btn-primary absolute top-0 right-0 rounded-l-none normal-case">
+                <button className="btn btn-primary w-1/2  md:w-1/3 absolute top-0 right-0 rounded-l-none normal-case">
                   Subscribe
                 </button>
               </div>
@@ -89,7 +97,7 @@ const Footer = () => {
           </form>
         </div>
       </div>
-      <div className=" flex  justify-center flex-end bg-[#000000] text-white py-3">
+      <div className=" flex  justify-center flex-end bg-[#000000] text-white py-3 px-3">
         <p>Copyright &copy; {new Date().getFullYear()} All Rights Reserved.</p>
       </div>
     </footer>

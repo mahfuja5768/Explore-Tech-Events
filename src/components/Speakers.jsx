@@ -11,7 +11,7 @@ const Speakers = () => {
         <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center">
           Event Speakers
         </h2>
-        <p className="text-center w-3/4 mx-auto my-5">
+        <p className="text-center w-full md:w-3/4 mx-auto my-5">
           Meet the experts and thought leaders who will be sharing their
           insights at TechCon 2023. Learn from the best in the industry!
         </p>
@@ -19,9 +19,9 @@ const Speakers = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-8 my-8">
         <div
           className="card  bg-base-100 shadow-xl"
-          data-aos="fade-right"
-          data-aos-offset="300"
-          data-aos-easing="ease-in-sine"
+          data-aos="flip-right"
+          data-aos-easing="ease-out-cubic"
+          data-aos-duration="3000"
         >
           <figure>
             <img
@@ -31,17 +31,14 @@ const Speakers = () => {
             />
           </figure>
           <div className="card-body items-center text-center">
-            <h2 className="card-title">Shoes!</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div className="card-actions">
-              <button className="btn btn-primary">Buy Now</button>
-            </div>
+            <h2 className="card-title">Name: Jane Smitha</h2>
+            <p></p>
           </div>
         </div>
         <div
           className="card  bg-base-100 shadow-xl"
           data-aos="fade-up"
-          data-aos-anchor-placement="bottom-bottom"
+          data-aos-duration="3000"
         >
           <figure>
             <img
@@ -51,18 +48,15 @@ const Speakers = () => {
             />
           </figure>
           <div className="card-body items-center text-center">
-            <h2 className="card-title">Shoes!</h2>
+            <h2 className="card-title">Name: David Johnson</h2>
             <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div className="card-actions">
-              <button className="btn btn-primary">Buy Now</button>
-            </div>
           </div>
         </div>
         <div
           className="card  bg-base-100 shadow-xl"
-          data-aos="fade-left"
-          data-aos-offset="300"
-          data-aos-easing="ease-in-sine"
+          data-aos="flip-left"
+          data-aos-easing="ease-out-cubic"
+          data-aos-duration="3000"
         >
           <figure>
             <img
@@ -72,11 +66,8 @@ const Speakers = () => {
             />
           </figure>
           <div className="card-body items-center text-center">
-            <h2 className="card-title">Shoes!</h2>
+            <h2 className="card-title">Name: Sarah Adams</h2>
             <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div className="card-actions">
-              <button className="btn btn-primary">Buy Now</button>
-            </div>
           </div>
         </div>
       </div>

@@ -4,7 +4,6 @@ import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa";
 import { useContext, useState } from "react";
 import { AuthContext } from "../components/ProviderContext/AuthProvider";
 import Footer from "../components/Footer";
-import Navbar2 from "../components/Navbar2";
 
 const Register = () => {
   const { createUser, googleSign, updateUser } = useContext(AuthContext);
@@ -20,7 +19,7 @@ const Register = () => {
     const email = form.get("email");
     const photoUrl = form.get("photoUrl");
     const password = form.get("password");
-    console.log(name, email, password);
+    // console.log(name, email, password);
 
     setRegisterError("");
     formValues.reset();
@@ -36,11 +35,9 @@ const Register = () => {
     // }
 
     createUser(email, password)
-      .then((res) => {
-        const user = res.user;
-        console.log(user);
+      .then(() => {
         updateUser(name, photoUrl)
-          .then(() => console.log("Photo updated"))
+          .then()
           .catch((err) => setRegisterError(err.message));
         toast.success("Successfully User Created!");
       })
@@ -53,9 +50,8 @@ const Register = () => {
     googleSign()
       .then((res) => {
         const user = res.user;
-        console.log(user);
         updateUser(user.photoURL, user.displayName)
-          .then(() => console.log("Photo updated"))
+          .then()
           .catch((err) => setRegisterError(err.message));
         toast.success("Successfully User Created!");
       })
@@ -66,12 +62,11 @@ const Register = () => {
 
   return (
     <>
-      <div className="flex flex-col w-full max-w-[1280px] mx-auto">
-        <Navbar2></Navbar2>
-        <div className="hero-content px-4 text-center lg:text-start text-neutral-content mx-auto  my-2 lg:my-8">
+      <div className="flex flex-col w-full max-w-[1280px] mx-auto px-3 my-8">
+        <div className="text-center lg:text-start text-neutral-content mx-auto lg:my-8">
           <div className="flex flex-col md:flex-row items-center gap-6 justify-between my-2">
             <div data-aos="fade-right" data-aos-duration="3000">
-              <img 
+              <img
                 src={`https://i.ibb.co/7V7mjG7/reigister-illus.png`}
                 alt=""
               />
@@ -146,11 +141,11 @@ const Register = () => {
                             placeholder="password"
                             className="input input-bordered"
                           />
-                          <label className="label text-lg my-1 text-black">
+                          <label className="label text-sm text-start text-black my-2">
                             <span>Already have an account?</span>
                             <Link
                               to={"/login"}
-                              className=" label-text-alt link link-hover ms-2 text-[#3e8ee9] text-xl"
+                              className=" label-text-alt link link-hover text-[#3e8ee9] text-sm"
                             >
                               Login now
                             </Link>

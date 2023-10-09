@@ -23,7 +23,7 @@ const EventSchedule = () => {
               <td>1</td>
               <td>Day 01</td>
               <td>09.00 am - 05.00 am</td>
-              <td>Alex Turner</td>
+              <td>Jane Smitha</td>
             </tr>
             <tr>
               <td>2</td>

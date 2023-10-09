@@ -5,7 +5,6 @@ import toast, { Toaster } from "react-hot-toast";
 import { useContext } from "react";
 import { AuthContext } from "../components/ProviderContext/AuthProvider";
 import Footer from "../components/Footer";
-import Navbar2 from "../components/Navbar2";
 
 const Login = () => {
   const { signInUser, googleSign } = useContext(AuthContext);
@@ -23,7 +22,7 @@ const Login = () => {
     const form = new FormData(e.currentTarget);
     const email = form.get("email");
     const password = form.get("password");
-    console.log(email, password);
+    // console.log(email, password);
     setLoginError("");
     formValues.reset();
 
@@ -44,7 +43,7 @@ const Login = () => {
     googleSign()
       .then(() => {
         toast.success("Successfully Logged in!");
-        navigate(location.state ? location.state : "/");
+        navigate(location?.state ? location.state : "/");
       })
       .catch((err) => {
         setLoginError(err.message);
@@ -54,7 +53,6 @@ const Login = () => {
   return (
     <>
       <div className="max-w-[1280px] mx-auto ">
-        <Navbar2></Navbar2>
         <div className="hero-content  px-4 text-center lg:text-start text-neutral-content mx-auto  my-2 lg:my-8">
           <div className="flex md:flex-row-reverse flex-col gap-6  items-center justify-between my-12">
             <div data-aos="fade-left" data-aos-duration="3000">
@@ -108,14 +106,14 @@ const Login = () => {
                             placeholder="password"
                             className="input input-bordered"
                           />
-                          <label className="label text-lg my-2 text-black">
+                          <label className="label text-sm text-start text-black my-2">
                             <span>New to this?</span>
-                            <Link
+                            <span><Link
                               to={"/register"}
-                              className=" label-text-alt link link-hover ms-2 text-[#3e8ee9] text-lg"
+                              className="link link-hover text-[#3e8ee9] text-sm"
                             >
                               Register now
-                            </Link>
+                            </Link></span>
                           </label>
                         </div>
                         {loginError && (

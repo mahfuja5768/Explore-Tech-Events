@@ -1,7 +1,6 @@
 import toast, { Toaster } from "react-hot-toast";
 import { useLoaderData, useParams } from "react-router-dom";
 import { FaTicketAlt, FaUserAlt } from "react-icons/fa";
-import Navbar2 from "./Navbar2";
 
 const EventDetails = () => {
   const allEvents = useLoaderData();
@@ -30,7 +29,6 @@ const EventDetails = () => {
   return (
     <>
       <div className=" max-w-[1280px] mx-auto  px-4">
-          <Navbar2></Navbar2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3 my-12">
           <div
             className="md:row-span-2 bg-gradient-to-b from-[#dad9d991] to-[#ffffff] rounded-xl"
