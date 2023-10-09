@@ -11,7 +11,7 @@ const ConferenceInfo = () => {
   let interval = useRef();
 
   const startTimer = () => {
-    const countdownDate = new Date("Oct 16, 2023 00:00:00").getTime();
+    const countdownDate = new Date("Oct 18, 2023 00:00:00").getTime();
     interval = setInterval(() => {
       const now = new Date().getTime();
       const distance = countdownDate - now;
@@ -59,7 +59,7 @@ const ConferenceInfo = () => {
               <span>
                 <FaCalendarDay></FaCalendarDay>
               </span>
-              <span>Date: October 16-18, 2023</span>
+              <span>Date: October 18-20, 2023</span>
             </p>
             <p className="flex items-center  gap-2 te text-lg md:text-xl py-1 font-semibold">
               <span>
