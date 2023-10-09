@@ -28,15 +28,14 @@ const Register = () => {
     } else if (password.length < 6) {
       return setRegisterError(" The password is less than 6 characters");
     }
-    //else if (!/[A-Z]/.test(password)) {
-    //   return setRegisterError(" The password don't have a capital letter");
-    // } else if (!/[!#$%&?]/.test(password)) {
-    //   return setRegisterError(" The password don't have a special character");
-    // }
+    else if (!/[A-Z]/.test(password)) {
+      return setRegisterError(" The password don't have a capital letter");
+    } else if (!/[!#$%&?]/.test(password)) {
+      return setRegisterError(" The password don't have a special character");
+    }
 
     createUser(email, password)
       .then(() => {
-        // toast.success("Successfully User Created!");
         updateUser(name, photoUrl)
           .then()
           .catch((err) => setRegisterError(err.message));

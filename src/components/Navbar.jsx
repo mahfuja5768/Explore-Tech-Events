@@ -76,26 +76,38 @@ const Navbar = () => {
           Blog
         </NavLink>
       </li>
+      <li className="lg:mx-2 mb-4 lg:mb-0">
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? "text-black hover:text-black underline decoration-black decoration-2 underline-offset-8 font-bold hover:bg-transparent"
+              : "text-black hover:text-black hover:underline decoration-black decoration-2 underline-offset-8 hover:bg-transparent"
+          }
+          to="/register"
+        >
+          Register
+        </NavLink>
+      </li>
 
       <li className="md:hidden w-1/2">
-      {user && (
-        <div className="flex flex-col items-start justify-start ">
-          {user?.photoURL ? (
-            <img
-              src={user?.photoURL}
-              className="rounded-full w-[40px] h-[40px]"
-              alt="user photo"
-            />
-          ) : (
-            <img
-              src={"https://i.ibb.co/VHT7xQ6/user1.png"}
-              className="rounded-full w-[40px] h-[40px]"
-              alt="user photo"
-            />
-          )}
-          <h3 className="text-black text-sm ms-2">{user?.displayName}</h3>
-        </div>
-      )}
+        {user && (
+          <div className="flex flex-col items-start justify-start ">
+            {user?.photoURL ? (
+              <img
+                src={user?.photoURL}
+                className="rounded-full w-[40px] h-[40px]"
+                alt="user photo"
+              />
+            ) : (
+              <img
+                src={"https://i.ibb.co/VHT7xQ6/user1.png"}
+                className="rounded-full w-[40px] h-[40px]"
+                alt="user photo"
+              />
+            )}
+            <h3 className="text-black text-sm ms-2">{user?.displayName}</h3>
+          </div>
+        )}
       </li>
       {user && (
         <li className="md:hidden w-1/2">

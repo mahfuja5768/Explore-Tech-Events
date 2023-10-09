@@ -4,7 +4,7 @@ const BlogContent = () => {
     data-aos-duration="3000">
       <div className="text-center">
         <h2 className="md:text-3xl text-2xl font-bold">
-          Title: Exploring the Future of Artificial Intelligence at TechX Summit
+           Exploring the Future of Artificial Intelligence at TechX Summit
           2023
         </h2>
         <p className="my-3">
