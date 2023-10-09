@@ -93,7 +93,7 @@ const Register = () => {
                             type="text"
                             name="name"
                             placeholder="name"
-                            className="input input-bordered"
+                            className="input input-bordered" required
                           />
                         </div>
                         <div className="form-control text-black">
@@ -104,7 +104,7 @@ const Register = () => {
                             type="email"
                             name="email"
                             placeholder="email"
-                            className="input input-bordered "
+                            className="input input-bordered " required
                           />
                         </div>
                         <div className="form-control text-black">
@@ -139,7 +139,7 @@ const Register = () => {
                             type={showPass ? "password" : "text"}
                             name="password"
                             placeholder="password"
-                            className="input input-bordered"
+                            className="input input-bordered" required
                           />
                           <label className="label text-sm text-start text-black my-2">
                             <span>Already have an account?</span>

@@ -50,7 +50,7 @@ const Navbar = () => {
           More Events
         </NavLink>
       </li>
-      {
+      
         <li className="lg:mx-2 mb-4 lg:mb-0">
           <NavLink
             className={({ isActive }) =>
@@ -63,7 +63,20 @@ const Navbar = () => {
             Selected Event
           </NavLink>
         </li>
-      }
+
+        <li className="lg:mx-2 mb-4 lg:mb-0">
+          <NavLink
+            className={({ isActive }) =>
+              isActive
+                ? "text-black hover:text-black underline decoration-black decoration-2 underline-offset-8 font-bold hover:bg-transparent"
+                : "text-black hover:text-black hover:underline decoration-black decoration-2 underline-offset-8 hover:bg-transparent"
+            }
+            to="/blog"
+          >
+           Blog
+          </NavLink>
+        </li>
+      
       {user && (
         <div className="flex flex-col mb-3 items-center justify-start md:hidden w-1/2">
           <img
@@ -79,7 +92,7 @@ const Navbar = () => {
           <Link
             to="/login"
             onClick={handleLogout}
-            className="btn bg-black text-white btn-sm rounded-sm mb-5"
+            className="btn bg-black text-white btn-sm rounded-lg mb-5"
           >
             Log out
           </Link>
@@ -87,7 +100,7 @@ const Navbar = () => {
       )}
       {!user && (
         <li className="md:hidden w-1/2">
-          <Link to="/login" className="btn btn-sm  rounded-sm mb-5">
+          <Link to="/login" className="btn btn-sm bg-black text-white   rounded-lg mb-5">
             Login
           </Link>
         </li>
@@ -126,7 +139,7 @@ const Navbar = () => {
           <div data-aos="fade-right" data-aos-duration="3000">
             <Link
               to="/"
-              className="btn btn-ghost normal-case lg:text-2xl hidden lg:flex text-black"
+              className="btn btn-ghost normal-case lg:text-2xl font-bold hidden lg:flex text-black"
             >
               Explore-Tech-Events
             </Link>
@@ -138,7 +151,7 @@ const Navbar = () => {
         <div className="navbar-end flex lg:hidden me-4">
           <Link
             to="/"
-            className="btn btn-ghost normal-case  text-xl mt-3 block lg:hidden"
+            className="btn btn-ghost normal-case  font-bold text-xl md:text-2xl  mt-3 block lg:hidden"
           >
             Explore-Tech-Events
           </Link>
@@ -156,7 +169,7 @@ const Navbar = () => {
           {!user && (
             <Link
               to="/login"
-              className="btn btn-sm text-xl rounded-sm normal-case"
+              className="btn btn-sm lg:btn text-xl lg:bg-black bg-black text-white  lg:text-white rounded-lg normal-case"
             >
               Login
             </Link>

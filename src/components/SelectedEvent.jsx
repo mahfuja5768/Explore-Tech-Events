@@ -1,7 +1,8 @@
 import { FaCalendarDay, FaLocationArrow, FaUserAlt } from "react-icons/fa";
+import PropTypes from "prop-types";
 
 const SelectedEvent = ({ event }) => {
-  const { author_name, date, event_name, img, location, short_description } =
+  const { author_name, date, event_name, img, price, location } =
     event || {};
 
   return (
@@ -32,6 +33,10 @@ const SelectedEvent = ({ event }) => {
               <span> Date: {date}</span>
             </p>
             <p className="flex items-center">
+                <FaCalendarDay className="text-sm me-2"></FaCalendarDay> {/* price icon */}
+              <span className="text-sm"> Price: {price}</span>
+            </p>
+            <p className="flex items-center">
               <span>
                 <FaLocationArrow className=" me-2"></FaLocationArrow>
               </span>
@@ -42,6 +47,10 @@ const SelectedEvent = ({ event }) => {
       </div>
     </div>
   );
+};
+
+SelectedEvent.propTypes = {
+  event: PropTypes.object.isRequired,
 };
 
 export default SelectedEvent;

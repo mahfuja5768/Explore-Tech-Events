@@ -3,7 +3,7 @@ import { FaCalendarDay, FaTicketAlt } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 const UpcomingEvent = ({ event }) => {
-  const { date, event_name, id, img, short_description } = event;
+  const { date, event_name, id,price, img, short_description } = event;
 
   const navigate = useNavigate();
 
@@ -38,6 +38,10 @@ const UpcomingEvent = ({ event }) => {
                 <FaCalendarDay className="text-sm me-2"></FaCalendarDay>
               </span>
               <span className="text-sm"> Date: {date}</span>
+            </p>
+            <p className="flex items-center">
+                <FaCalendarDay className="text-sm me-2"></FaCalendarDay> {/* price icon */}
+              <span className="text-sm"> Price: {price}</span>
             </p>
           </div>
           <div className="card-actions py-2">

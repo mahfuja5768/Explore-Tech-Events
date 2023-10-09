@@ -7,7 +7,7 @@ const EventDetails = () => {
   const { id } = useParams();
 
   const selectedEvent = allEvents.find((event) => event.id == id);
-  const { author_name, date, event_name, img, location, short_description } =
+  const { author_name, date, event_name,price, img, location, short_description } =
     selectedEvent || {};
 
   const saveEventId = (id) => {
@@ -68,6 +68,7 @@ const EventDetails = () => {
               </p>
               <p className="text-lg font-bold">{location}</p>
               <p className="mb-4 text-lg font-bold">{date}</p>
+              <p className="mb-4 text-lg font-bold">{price}</p>
               <button
                 onClick={handleTicket}
                 className="btn bg-gray-200 btn-outline  w-full normal-case p-4"
