@@ -41,51 +41,54 @@ const ConferenceInfo = () => {
   });
 
   return (
-    <div className="max-w-[1280px] mx-auto mb-24 mt-12  px-3">
+    <div
+      className="max-w-[1280px] mx-auto mb-24 mt-12  px-3"
+      data-aos="fade-up"
+      data-aos-duration="3000"
+    >
       <h2 className="text-2xl md:text-4xl font-bold text-center">
         ABOUT THE CONFERENCE
       </h2>
       <p className="text-lg my-5 text-center w-full md:w-3/4 lg:w-2/3 mx-auto">
-      
         Join us for three days of tech innovation, networking, and knowledge
         sharing. Get ready to dive into the future of technology!
       </p>
-          <div className=" flex flex-col justify-center md:flex-row items-center gap-6 my-6">
-            <div className="border-2 p-3 rounded-3xl border-gray-500">
-            <p className="text-lg md:text-xl font-semibold py-1">
-              Event Name: TechCon 2023
-            </p>
-            <p className="flex items-center  gap-2 text-lg md:text-xl py-1 font-semibold">
-              <span>
-                <FaCalendarDay></FaCalendarDay>
-              </span>
-              <span>Date: October 18-20, 2023</span>
-            </p>
-            <p className="flex items-center  gap-2 te text-lg md:text-xl py-1 font-semibold">
-              <span>
-                <FaLocationArrow></FaLocationArrow>
-              </span>
-              <span>Location: San Francisco, CA</span>
-            </p>
-            </div>
-            <div className="grid grid-cols-4 gap-5 border-2 p-3 rounded-3xl border-gray-500">
-            <section className="text-4xl p-4 bg-gray-800 text-white rounded-xl flex flex-col items-center">
-              <p>{timerDays}</p>
-              <p>d</p>
-            </section>
-            <section className="text-4xl p-4 bg-gray-800 text-white rounded-xl flex flex-col items-center">
-              <p>{timerHours}</p>
-              <p>h</p>
-            </section>
-            <section className="text-4xl p-4 bg-gray-800 text-white rounded-xl flex flex-col items-center">
-              <p>{timerMinutes}</p>
-              <p>m</p>
-            </section>
-            <section className="text-4xl p-4 bg-gray-800 text-white rounded-xl flex flex-col items-center">
-              <p>{timerSeconds}</p>
-              <p>s</p>
-            </section>
-          </div>
+      <div className=" flex flex-col justify-center md:flex-row items-center gap-6 my-6">
+        <div className="border-2 p-3 rounded-3xl border-gray-500">
+          <p className="text-lg md:text-xl font-semibold py-1">
+            Event Name: TechCon 2023
+          </p>
+          <p className="flex items-center  gap-2 text-lg md:text-xl py-1 font-semibold">
+            <span>
+              <FaCalendarDay></FaCalendarDay>
+            </span>
+            <span>Date: October 18-20, 2023</span>
+          </p>
+          <p className="flex items-center  gap-2 te text-lg md:text-xl py-1 font-semibold">
+            <span>
+              <FaLocationArrow></FaLocationArrow>
+            </span>
+            <span>Location: San Francisco, CA</span>
+          </p>
+        </div>
+        <div className="grid grid-cols-4 gap-5 border-2 p-3 rounded-3xl border-gray-500">
+          <section className="text-4xl p-4 bg-gray-800 text-white rounded-xl flex flex-col items-center">
+            <p>{timerDays}</p>
+            <p>d</p>
+          </section>
+          <section className="text-4xl p-4 bg-gray-800 text-white rounded-xl flex flex-col items-center">
+            <p>{timerHours}</p>
+            <p>h</p>
+          </section>
+          <section className="text-4xl p-4 bg-gray-800 text-white rounded-xl flex flex-col items-center">
+            <p>{timerMinutes}</p>
+            <p>m</p>
+          </section>
+          <section className="text-4xl p-4 bg-gray-800 text-white rounded-xl flex flex-col items-center">
+            <p>{timerSeconds}</p>
+            <p>s</p>
+          </section>
+        </div>
       </div>
     </div>
   );
