@@ -11,7 +11,7 @@ const ConferenceInfo = () => {
   let interval = useRef();
 
   const startTimer = () => {
-    const countdownDate = new Date("Oct 18, 2023 00:00:00").getTime();
+    const countdownDate = new Date("Oct 25, 2023 00:00:00").getTime();
     interval = setInterval(() => {
       const now = new Date().getTime();
       const distance = countdownDate - now;
@@ -56,19 +56,19 @@ const ConferenceInfo = () => {
       <div className=" flex flex-col justify-center md:flex-row items-center gap-6 my-6">
         <div className="border-2 p-3 rounded-3xl border-gray-500">
           <p className="text-lg md:text-xl font-semibold py-1">
-            Event Name: TechCon 2023
+            Event Name: Cybersecurity Summit 2023
           </p>
           <p className="flex items-center  gap-2 text-lg md:text-xl py-1 font-semibold">
             <span>
               <FaCalendarDay></FaCalendarDay>
             </span>
-            <span>Date: October 18-20, 2023</span>
+            <span>Date: October 25-27, 2023</span>
           </p>
           <p className="flex items-center  gap-2 te text-lg md:text-xl py-1 font-semibold">
             <span>
               <FaLocationArrow></FaLocationArrow>
             </span>
-            <span>Location: San Francisco, CA</span>
+            <span>Location: Hotel Millennium Gold, Khulna</span>
           </p>
         </div>
         <div className="grid grid-cols-4 gap-5 border-2 p-3 rounded-3xl border-gray-500">

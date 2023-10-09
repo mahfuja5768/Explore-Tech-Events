@@ -29,7 +29,7 @@ const UpcomingEvent = ({ event }) => {
             {short_description.length < 150 ? (
               { short_description }
             ) : (
-              <span>{short_description.slice(0, 100)}</span>
+              <span>{short_description.slice(0, 100)}...</span>
             )}
           </p>
           <div className="py-1">

@@ -30,14 +30,20 @@ const Footer = () => {
             >
               More Events
             </Link>
-            {
+            
               <Link
-                className="link link-hover ps-1 font-medium"
+                className="link link-hover ps-1 pb-3 font-medium"
                 to="/selectedEvent"
               >
                 Selected Event
               </Link>
-            }
+              <Link
+                className="link link-hover ps-1 font-medium"
+                to="/blog"
+              >
+                Blog
+              </Link>
+            
           </nav>
 
           <nav>

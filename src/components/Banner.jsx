@@ -4,7 +4,7 @@ const Banner = () => {
   return (
     <div>
       <div
-          className="carousel w-full h-[90vh] mb-12 text-center lg:text-start lg:text-center"
+          className="carousel w-full h-[90vh] mb-12 text-center lg:text-start "
         >
           <div id="slide1" className="carousel-item relative w-full">
             <img src={'https://i.ibb.co/wzMDxsC/banner1.jpg'} className="w-full" alt="banner-png" />
@@ -54,16 +54,6 @@ const Banner = () => {
                 alt=""
               />
             </div>
-            {/* <div
-              className="w-1/2 hidden lg:flex"
-              data-aos="fade-left"
-              data-aos-duration="3000"
-            >
-              <img
-                src={`https://i.ibb.co/DrvShMP/banner-light2-removebg-preview.png`}
-                alt=""
-              />
-            </div> */}
               </div>
               <a
                 href="#slide2"
@@ -82,7 +72,7 @@ const Banner = () => {
                 className="btn btn-circle bg-[#272626] border-none text-white ms-5"
                 >❮</a
               >
-              <div className="hero-content text-white py-12">
+              <div className="hero-content text-white">
               <div className="grid grid-cols-1 lg:grid-cols-4">
               <div
                 className=" lg:col-span-3"
