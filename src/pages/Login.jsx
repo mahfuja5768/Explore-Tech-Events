@@ -55,7 +55,9 @@ const Login = () => {
       <div className="max-w-[1280px] mx-auto ">
         <div className="hero-content  px-4 text-center lg:text-start text-neutral-content mx-auto  my-2 lg:my-8">
           <div className="flex md:flex-row-reverse flex-col gap-6  items-center justify-between my-12">
-            <div data-aos="fade-left" data-aos-duration="3000">
+            <div  data-aos="flip-right"
+          data-aos-easing="ease-out-cubic"
+          data-aos-duration="3000">
               <img
                 src={`https://i.ibb.co/7V7mjG7/reigister-illus.png`}
                 alt=""
@@ -64,7 +66,8 @@ const Login = () => {
 
             <div
               className="opacity-100 bg-[#cae2fe] py-2 rounded-xl"
-              data-aos="fade-right"
+              data-aos="flip-left"
+              data-aos-easing="ease-out-cubic"
               data-aos-duration="3000"
             >
               <div className="hero">

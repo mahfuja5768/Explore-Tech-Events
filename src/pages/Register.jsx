@@ -67,7 +67,9 @@ const Register = () => {
       <div className="flex flex-col w-full max-w-[1280px] mx-auto px-3 my-8">
         <div className="text-center lg:text-start text-neutral-content mx-auto lg:my-8">
           <div className="flex flex-col md:flex-row items-center gap-6 justify-between my-2">
-            <div data-aos="fade-right" data-aos-duration="3000">
+            <div  data-aos="flip-right"
+          data-aos-easing="ease-out-cubic"
+          data-aos-duration="3000">
               <img
                 src={`https://i.ibb.co/7V7mjG7/reigister-illus.png`}
                 alt=""
@@ -76,7 +78,8 @@ const Register = () => {
 
             <div
               className="opacity-100 bg-[#cae2fe] py-1 rounded-xl"
-              data-aos="fade-left"
+              data-aos="flip-left"
+              data-aos-easing="ease-out-cubic"
               data-aos-duration="3000"
             >
               <div className="hero ">

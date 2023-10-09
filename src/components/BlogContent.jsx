@@ -1,6 +1,7 @@
 const BlogContent = () => {
   return (
-    <div className="max-w-[1280px] mx-auto px-4 my-16">
+    <div className="max-w-[1280px] mx-auto px-4 my-16" data-aos="fade-up"
+    data-aos-duration="3000">
       <div className="text-center">
         <h2 className="md:text-3xl text-2xl font-bold">
           Title: Exploring the Future of Artificial Intelligence at TechX Summit
