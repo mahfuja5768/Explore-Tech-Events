@@ -3,24 +3,8 @@ import { FaArrowCircleRight } from "react-icons/fa";
 const Banner = () => {
   return (
     <div>
-      {/* <div
-        classNameName="hero text-white my-16 max-w-[1280px] mx-auto "
-        style={{
-          backgroundImage: "url(https://i.ibb.co/wzMDxsC/banner1.jpg)",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-        }}
-      >
-        <div classNameName="hero-overlay p-0"></div>
-        <div classNameName="flex flex-col w-full ">
-          <div classNameName="hero-content px-2 min-h-[30vh] md:min-h-[40vh] lg:min-h-[70vh]  text-center lg:text-start text-neutral-content mx-auto  my-2 lg:my-8">
-            
-          </div>
-        </div>
-      </div> */}
       <div
-          className="carousel w-full h-[70vh] my-12 text-center lg:text-center"
+          className="carousel w-full h-[90vh] mb-12 text-center lg:text-start lg:text-center"
         >
           <div id="slide1" className="carousel-item relative w-full">
             <img src={'https://i.ibb.co/wzMDxsC/banner1.jpg'} className="w-full" alt="banner-png" />
@@ -32,7 +16,7 @@ const Banner = () => {
                 className="btn btn-circle bg-[#272626] border-none text-white ms-5"
                 >❮</a
               >
-              <div className="hero-content text-white py-12">
+              <div className="hero-content text-white">
               <div className="grid grid-cols-1 lg:grid-cols-4">
               <div
                 className=" lg:col-span-3"
