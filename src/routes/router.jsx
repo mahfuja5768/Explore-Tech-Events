@@ -10,7 +10,7 @@ import PrivateRoute from "./PrivateRoute";
 import About from "../pages/About";
 
 import MoreEvents from "../pages/MoreEvents";
-import Profile from "../pages/Blog";
+import Blog from "../pages/Blog";
 
 const router = createBrowserRouter([
   {
@@ -55,7 +55,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/blog",
-        element: <Profile></Profile>
+        element: <PrivateRoute><Blog></Blog></PrivateRoute>
       },
     ],
   },

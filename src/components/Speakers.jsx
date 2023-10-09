@@ -38,7 +38,7 @@ const Speakers = () => {
               in Computer Science from MIT and over two decades of experience,
               Dr. Smith has been at the forefront of AI advancements. She is the
               author of several groundbreaking papers and the best-selling book,
-              "AI Revolution: Shaping the Future." Dr. Smith's work has
+              "AI Revolution: Shaping the Future." Dr. Smitha's work has
               transformed industries and has led to the development of
               innovative AI solutions that enhance productivity and drive
               business growth. As a keynote speaker, she will share her insights
@@ -63,11 +63,11 @@ const Speakers = () => {
             <p className="text-justify">
               <b>Bio:</b> Mr.David Johnson is a data science maven and the Chief
               Data Scientist at GlobalTech Corp. With a strong background in
-              data analytics and machine learning, Sarah has played a pivotal
+              data analytics and machine learning, David has played a pivotal
               role in helping organizations harness the power of data to make
               informed decisions and drive growth. Her expertise extends to
               predictive analytics, data-driven marketing, and AI-driven
-              solutions. As a thought leader in the data science field, Sarah's
+              solutions. As a thought leader in the data science field, David's
               presentations are known for their practical insights and
               actionable strategies that empower businesses to thrive in the
               data-driven era.

@@ -82,7 +82,7 @@ const Navbar = () => {
         <div className="flex flex-col items-start justify-start ">
           {user?.photoURL ? (
             <img
-              src={user.photoURL}
+              src={user?.photoURL}
               className="rounded-full w-[40px] h-[40px]"
               alt="user photo"
             />

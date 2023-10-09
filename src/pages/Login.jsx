@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
@@ -11,10 +11,12 @@ const Login = () => {
 
   const [loginError, setLoginError] = useState("");
   const [showPass, setShowPass] = useState(true);
+  const [user, setUser] = useState("");
   const emailRef = useRef(null);
 
   const navigate = useNavigate();
   const location = useLocation();
+  console.log(location)
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -27,13 +29,11 @@ const Login = () => {
     formValues.reset();
 
     signInUser(email, password)
-      .then(() => {
-        if (location.state) {
-          navigate(location.state);
-          toast.success("Successfully Logged in!");
-        } else {
-          navigate("/");
-        }
+      .then((res) => {
+        setUser(res.user)
+        console.log(res.user.displayName)
+        toast.success("Successfully Logged in!");
+        navigate(location?.state ? location.state : "/");
       })
       .catch((err) => {
         setLoginError(err.message);
