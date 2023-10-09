@@ -1,6 +1,6 @@
 import toast, { Toaster } from "react-hot-toast";
 import { useLoaderData, useParams } from "react-router-dom";
-import { FaTicketAlt, FaUserAlt } from "react-icons/fa";
+import { FaTicketAlt, FaUserAlt , FaMoneyBillAlt, FaCalendarDay, FaLocationArrow} from "react-icons/fa";
 
 const EventDetails = () => {
   const allEvents = useLoaderData();
@@ -66,9 +66,22 @@ const EventDetails = () => {
                 <span className="text-lg font-bold">Description</span>:{" "}
                 {short_description}
               </p>
-              <p className="text-lg font-bold">{location}</p>
-              <p className="mb-4 text-lg font-bold">{date}</p>
-              <p className="mb-4 text-lg font-bold">{price}</p>
+              <p className="flex items-center my-2 text-lg font-bold">
+              <span>
+                <FaLocationArrow className=" me-2"></FaLocationArrow>
+              </span>
+              <span> Date: {location}</span>
+            </p>
+              <p className="flex items-center my-2 text-lg font-bold">
+              <span>
+                <FaCalendarDay className=" me-2"></FaCalendarDay>
+              </span>
+              <span> Date: {date}</span>
+            </p>
+            <p className="flex items-center mb-4 text-lg font-bold">
+                <FaMoneyBillAlt className="me-2"></FaMoneyBillAlt> {/* price icon */}
+              <span> Price: {price}</span>
+            </p>
               <button
                 onClick={handleTicket}
                 className="btn bg-gray-200 btn-outline  w-full normal-case p-4"

@@ -32,7 +32,18 @@ const Speakers = () => {
           </figure>
           <div className="card-body items-center text-center">
             <h2 className="card-title">Name: Jane Smitha</h2>
-            <p></p>
+            <p className="text-justify">
+              <b>Bio:</b> Dr. Jane Smitha is a renowned AI researcher and a
+              trailblazer in the field of artificial intelligence. With a Ph.D.
+              in Computer Science from MIT and over two decades of experience,
+              Dr. Smith has been at the forefront of AI advancements. She is the
+              author of several groundbreaking papers and the best-selling book,
+              "AI Revolution: Shaping the Future." Dr. Smith's work has
+              transformed industries and has led to the development of
+              innovative AI solutions that enhance productivity and drive
+              business growth. As a keynote speaker, she will share her insights
+              into the latest trends and the future of AI.
+            </p>
           </div>
         </div>
         <div
@@ -49,7 +60,18 @@ const Speakers = () => {
           </figure>
           <div className="card-body items-center text-center">
             <h2 className="card-title">Name: David Johnson</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
+            <p className="text-justify">
+              <b>Bio:</b> Mr.David Johnson is a data science maven and the Chief
+              Data Scientist at GlobalTech Corp. With a strong background in
+              data analytics and machine learning, Sarah has played a pivotal
+              role in helping organizations harness the power of data to make
+              informed decisions and drive growth. Her expertise extends to
+              predictive analytics, data-driven marketing, and AI-driven
+              solutions. As a thought leader in the data science field, Sarah's
+              presentations are known for their practical insights and
+              actionable strategies that empower businesses to thrive in the
+              data-driven era.
+            </p>
           </div>
         </div>
         <div
@@ -67,7 +89,16 @@ const Speakers = () => {
           </figure>
           <div className="card-body items-center text-center">
             <h2 className="card-title">Name: Sarah Adams</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
+            <p className="text-justify">
+              <b>Bio:</b> Mr.Sarah Adams is a visionary tech entrepreneur, futurist,
+              and the Founder and CEO of Tech Innovations Inc. With a passion
+              for innovation, John has led his company to develop cutting-edge
+              technologies in the Internet of Things (IoT) space. His work has
+              revolutionized how we interact with everyday objects and has
+              opened up new possibilities for smart homes, connected cities, and
+              beyond. John is a sought-after speaker known for his dynamic
+              presentations on the impact of IoT on our lives and businesses.
+            </p>
           </div>
         </div>
       </div>

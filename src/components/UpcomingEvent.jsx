@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { FaCalendarDay, FaTicketAlt } from "react-icons/fa";
+import { FaCalendarDay, FaTicketAlt , FaMoneyBillAlt} from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 const UpcomingEvent = ({ event }) => {
@@ -37,17 +37,17 @@ const UpcomingEvent = ({ event }) => {
               <span>
                 <FaCalendarDay className="text-sm me-2"></FaCalendarDay>
               </span>
-              <span className="text-sm"> Date: {date}</span>
+              <span className="text-lg"> Date: {date}</span>
             </p>
             <p className="flex items-center">
-                <FaCalendarDay className="text-sm me-2"></FaCalendarDay> {/* price icon */}
-              <span className="text-sm"> Price: {price}</span>
+                <FaMoneyBillAlt className="text-sm me-2"></FaMoneyBillAlt> {/* price icon */}
+              <span className="text-lg"> Price: {price}</span>
             </p>
           </div>
           <div className="card-actions py-2">
             <button
               onClick={() => handleDetail(id)}
-              className="btn bg-gray-200 btn-outline  w-full normal-case p-4"
+              className="btn bg-gray-200 btn-outline  w-full normal-case"
             >
               Details & Get Ticket
               <span>
