@@ -50,43 +50,53 @@ const Navbar = () => {
           More Events
         </NavLink>
       </li>
-      
-        <li className="lg:mx-2 mb-4 lg:mb-0">
-          <NavLink
-            className={({ isActive }) =>
-              isActive
-                ? "text-black hover:text-black underline decoration-black decoration-2 underline-offset-8 font-bold hover:bg-transparent"
-                : "text-black hover:text-black hover:underline decoration-black decoration-2 underline-offset-8 hover:bg-transparent"
-            }
-            to="/selectedEvent"
-          >
-            Selected Event
-          </NavLink>
-        </li>
 
-        <li className="lg:mx-2 mb-4 lg:mb-0">
-          <NavLink
-            className={({ isActive }) =>
-              isActive
-                ? "text-black hover:text-black underline decoration-black decoration-2 underline-offset-8 font-bold hover:bg-transparent"
-                : "text-black hover:text-black hover:underline decoration-black decoration-2 underline-offset-8 hover:bg-transparent"
-            }
-            to="/blog"
-          >
-           Blog
-          </NavLink>
-        </li>
-      
+      <li className="lg:mx-2 mb-4 lg:mb-0">
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? "text-black hover:text-black underline decoration-black decoration-2 underline-offset-8 font-bold hover:bg-transparent"
+              : "text-black hover:text-black hover:underline decoration-black decoration-2 underline-offset-8 hover:bg-transparent"
+          }
+          to="/selectedEvent"
+        >
+          Selected Event
+        </NavLink>
+      </li>
+
+      <li className="lg:mx-2 mb-4 lg:mb-0">
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? "text-black hover:text-black underline decoration-black decoration-2 underline-offset-8 font-bold hover:bg-transparent"
+              : "text-black hover:text-black hover:underline decoration-black decoration-2 underline-offset-8 hover:bg-transparent"
+          }
+          to="/blog"
+        >
+          Blog
+        </NavLink>
+      </li>
+
+      <li className="md:hidden w-1/2">
       {user && (
-        <div className="flex flex-col mb-3 items-center justify-start md:hidden w-1/2">
-          <img
-            src={user.photoURL}
-            className="rounded-full w-[40px] h-[40px]"
-            alt="user photo"
-          />
-          <h3 className=" text-black text-sm">{user.displayName}</h3>
+        <div className="flex flex-col items-start justify-start ">
+          {user?.photoURL ? (
+            <img
+              src={user.photoURL}
+              className="rounded-full w-[40px] h-[40px]"
+              alt="user photo"
+            />
+          ) : (
+            <img
+              src={"https://i.ibb.co/VHT7xQ6/user1.png"}
+              className="rounded-full w-[40px] h-[40px]"
+              alt="user photo"
+            />
+          )}
+          <h3 className="text-black text-sm ms-2">{user?.displayName}</h3>
         </div>
       )}
+      </li>
       {user && (
         <li className="md:hidden w-1/2">
           <Link
@@ -100,7 +110,10 @@ const Navbar = () => {
       )}
       {!user && (
         <li className="md:hidden w-1/2">
-          <Link to="/login" className="btn btn-sm bg-black text-white   rounded-lg mb-5">
+          <Link
+            to="/login"
+            className="btn btn-sm bg-black text-white normal-case  rounded-lg mb-5"
+          >
             Login
           </Link>
         </li>
@@ -177,16 +190,20 @@ const Navbar = () => {
 
           {user && (
             <div className="flex flex-col items-center justify-center mx-5">
-             {user.photoURL} ? <img
-                src={user.photoURL}
-                className="rounded-full w-[40px] h-[40px]"
-                alt="user photo"
-              /> : <img
-              src={'https://i.ibb.co/VHT7xQ6/user1.png'}
-              className="rounded-full w-[40px] h-[40px]"
-              alt="user photo"
-            />
-              <h3 className=" text-black text-sm">{user.displayName}</h3>
+              {user?.photoURL ? (
+                <img
+                  src={user.photoURL}
+                  className="rounded-full w-[40px] h-[40px]"
+                  alt="user photo"
+                />
+              ) : (
+                <img
+                  src={"https://i.ibb.co/VHT7xQ6/user1.png"}
+                  className="rounded-full w-[40px] h-[40px]"
+                  alt="user photo"
+                />
+              )}
+              <h3 className="text-black text-sm">{user?.displayName}</h3>
             </div>
           )}
         </div>

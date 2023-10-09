@@ -23,7 +23,7 @@ const Register = () => {
 
     setRegisterError("");
     formValues.reset();
-    if (name.length === 0 || photoUrl.length === 0 || password.length < 0) {
+    if (name.length === 0 || password.length < 0) {
       return;
     } else if (password.length < 6) {
       return setRegisterError(" The password is less than 6 characters");
@@ -36,6 +36,7 @@ const Register = () => {
 
     createUser(email, password)
       .then(() => {
+        // toast.success("Successfully User Created!");
         updateUser(name, photoUrl)
           .then()
           .catch((err) => setRegisterError(err.message));
@@ -50,6 +51,7 @@ const Register = () => {
     googleSign()
       .then((res) => {
         const user = res.user;
+        console.log(user)
         updateUser(user.photoURL, user.displayName)
           .then()
           .catch((err) => setRegisterError(err.message));
@@ -93,7 +95,8 @@ const Register = () => {
                             type="text"
                             name="name"
                             placeholder="name"
-                            className="input input-bordered" required
+                            className="input input-bordered"
+                            required
                           />
                         </div>
                         <div className="form-control text-black">
@@ -104,7 +107,8 @@ const Register = () => {
                             type="email"
                             name="email"
                             placeholder="email"
-                            className="input input-bordered " required
+                            className="input input-bordered "
+                            required
                           />
                         </div>
                         <div className="form-control text-black">
@@ -139,7 +143,8 @@ const Register = () => {
                             type={showPass ? "password" : "text"}
                             name="password"
                             placeholder="password"
-                            className="input input-bordered" required
+                            className="input input-bordered"
+                            required
                           />
                           <label className="label text-sm text-start text-black my-2">
                             <span>Already have an account?</span>
