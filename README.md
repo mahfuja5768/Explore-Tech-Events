@@ -4,6 +4,9 @@
   <h2>Live link : https://explore-tech-events.vercel.app</h2>
 </div>
 
+### Technologies:
+- This project is made by React, Tailwind, Daisu Ui. Here for authentication I used firebase.
+
 ## # Different features and functionalities  of my website are giving below :
 
 ### ~ First of all I add a navbar in my site and also a banner section with carousel. In the navbar I showed logged in user photo and name. I placed here a logout and login toggle button. Here also placed website name and some nav items.
